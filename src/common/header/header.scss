@@ -1,0 +1,120 @@
+@import '../../styles/index.scss';
+
+.header{
+    padding: 10px 30px;
+    box-shadow: 1px 1px 10px 1px gray;
+
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: var(--theme-white-background);
+        overflow-x: hidden;
+        padding-top: 70px;
+        transition: 0.5s;
+        z-index: 1000;
+    
+        &.open {
+            width: 100%;
+        }
+    
+        .dropdown-category {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            max-height: 0;
+            background-color: #f3f3f3;
+            transition: max-height 0.5s ease, padding 0.3s ease;
+            padding: 0 0;
+    
+            &.open {
+                max-height: 350px;
+                padding: 10px 0;
+            }
+    
+            a {
+                padding: 10px 15px 10px 40px;
+                color: var(--theme-primary-color);
+                font-size: 20px;
+    
+            }
+        }
+    
+    
+        .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 40px;
+            font-size: 35px;
+            cursor: pointer;
+        }
+    
+        .menu-item {
+            width: 100%;
+            padding: 20px 15px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #080707;
+            display: block;
+            transition: 0.3s;
+            border: 2px solid black;
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    
+            &.category {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+    }
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .logo{
+            transition: .2s;
+            img{
+                width: 125px;
+            }
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+        .nav{
+            display: flex;
+            gap: 35px;
+            a{
+                font-weight: 550;
+                font-size: 15px;
+                display: block;
+                color: rgb(69, 69, 69);
+                transition: .3s ease-in-out;
+                text-decoration: none;
+                &:after{
+                    content: "";
+                    display: block;
+                    width: 0%;
+                    height: 2px;
+                    transition: .3s ease-in-out;
+                    background-color: rgba(0, 0, 0, 0.6);
+                }
+                &:hover{
+                    &:after{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .menu{
+            gap: 20px;
+            align-items: center;
+            display: flex;
+            .icon{
+                font-size: 25px;
+            }
+        }
+    }
+}

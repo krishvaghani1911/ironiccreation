@@ -1,0 +1,103 @@
+@import '../../../styles/index.scss';
+
+.slider-container {
+    margin: 20px;
+    padding: 10px;
+    border: 1.5px solid black;
+
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+
+    .slick-slider {
+        position: relative;
+        height: 100%;
+
+        .slick-list {
+            overflow: hidden;
+            height: 100%;
+
+            .slick-track {
+                display: flex;
+                align-items: center;
+                height: 100%;
+
+                .slick-slide {
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: opacity 0.5s ease-in-out;
+
+                    div {
+                        background-color: #000000;
+                        height: 100vh;
+                        width: 100%;
+                    }
+
+                    img {
+                        // object-fit: cover;
+                        display: block;
+                        width: 100% !important;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+
+        // Updated dot styles
+        .slick-dots {
+            width: fit-content;
+            position: absolute;
+            top: 50%;
+            right: 10px; // Align dots on the right side
+            transform: translateY(-50%);
+            display: flex !important;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            li {
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 10px 0;  // Space between dots
+                width: 10px;
+                height: 10px;
+                button {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background: transparent;
+                    border: 2px solid #000000;
+                    transition: 0.3s, border 0.3s;
+
+                    &:before {
+                        display: none;
+                    }
+
+                    &:hover {
+                        background: #000000;
+                        // border: 2px solid #5900ff;
+                    }
+                }
+            }
+        }
+    }
+
+    .slick-prev,
+    .slick-next {
+        display: none !important; // Hide the arrows
+    }
+}
+
+.slick-active {
+    // width: 100%;
+    // height: 100%;
+    background: #000000;
+    border-radius: 50%;
+}
