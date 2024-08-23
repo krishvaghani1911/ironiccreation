@@ -36,10 +36,9 @@ export default function Header() {
                 <Link className="menu-item" to={"/"}>Home</Link>
                 <div className='menu-item category' onClick={toggleDropdown} >Category<FaCaretDown /></div>
                 <div className={`dropdown-category ${dropdownOpen ? 'open' : ''}`}>
-                    {/* <Link to={'home/furniture'} onClick={closeNav}>Furniture</Link>
-                    <Link to={'home/cosmetics'} onClick={closeNav}>Cosmetic</Link> */}
+
                     {
-                        catogories.map((item, index) => {
+                        categoryNames.map((item, index) => {
                             return (
                                 <Link to={item.path} key={index} onClick={closeNav}>{item.category}</Link>
                             )
